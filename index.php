@@ -8,6 +8,7 @@ $routes = [
     'login' => 'views/login.php',
     'admin' => 'views/admin.php',
     'employe' => 'views/employe.php',
+    'dashboard' => 'controllers/dashboard.php',
     '404' => 'views/404.php',
 ];
 
@@ -19,4 +20,4 @@ if (!array_key_exists($page, $routes)) {
     redirect($routes['404']);
 }
 
-redirect($routes[$page]);
+include($routes[$page]);

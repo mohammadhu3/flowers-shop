@@ -60,17 +60,17 @@ CREATE TABLE tasks_users
 -- Insertion des utilisateurs de test (mots de passe : "password123")
 INSERT INTO users (first_name, last_name, email, phone, password, role, status)
 VALUES ('Marie', 'Dupont', 'marie.dupont@flowers-shop.com', '0123456789',
-        '$2b$10$rQ8KvM9xJ1pX4fN6mZ9dUe8L7YtGhS2qP3wV5kA9bC8dE4fF6gH7iJ', 'Vendeur', 'Actif'),
+        '$2y$10$bKR6W.XOFRrYXVaXqrIy7.heGQDYgJCswsB4MKfkrSB4HXPw2Mf.G', 'Vendeur', 'Actif'),
        ('Pierre', 'Martin', 'pierre.martin@flowers-shop.com', '0123456790',
-        '$2b$10$sT9LwN0yK2qY5gO7nA0eVf9M8ZuHiT3rQ4xW6lB0cD9eF5gG7hI8jK', 'Stagiaire', 'Actif'),
+        '$2y$10$bKR6W.XOFRrYXVaXqrIy7.heGQDYgJCswsB4MKfkrSB4HXPw2Mf.G', 'Stagiaire', 'Actif'),
        ('Sophie', 'Leroy', 'sophie.leroy@flowers-shop.com', '0123456791',
-        '$2b$10$uV0MxO1zL3rZ6hP8oB1fWg0N9AuIjU4sR5yX7mC1dE0fG6hH8iI9jL', 'Vendeur', 'Actif'),
+        '$2y$10$bKR6W.XOFRrYXVaXqrIy7.heGQDYgJCswsB4MKfkrSB4HXPw2Mf.G', 'Vendeur', 'Actif'),
        ('Jean', 'Moreau', 'jean.moreau@flowers-shop.com', '0123456792',
-        '$2b$10$wX1NyP2aM4sA7iQ9pC2gXh1O0BuJkV5tS6zY8nD2eF1gH7iI9jJ0kM', 'Vendeur', 'Actif'),
+        '$2y$10$bKR6W.XOFRrYXVaXqrIy7.heGQDYgJCswsB4MKfkrSB4HXPw2Mf.G', 'Vendeur', 'Actif'),
        ('Claire', 'Bernard', 'claire.bernard@flowers-shop.com', '0123456793',
-        '$2b$10$yZ2OzQ3bN5tB8jR0qD3hYi2P1CuKlW6uT7aZ9oE3fG2hI8jJ0kK1lN', 'Vendeur', 'Actif'),
+        '$2y$10$bKR6W.XOFRrYXVaXqrIy7.heGQDYgJCswsB4MKfkrSB4HXPw2Mf.G', 'Vendeur', 'Actif'),
        ('Lucas', 'Petit', 'lucas.petit@flowers-shop.com', '0123456794',
-        '$2b$10$aB3PaR4cO6uC9kS1rE4iZj3Q2DuLmX7vU8bA0pF4gH3iJ9kK1lL2mO', 'Responsable', 'Actif');
+        '$2y$10$bKR6W.XOFRrYXVaXqrIy7.heGQDYgJCswsB4MKfkrSB4HXPw2Mf.G', 'Responsable', 'Actif');
 
 -- Insertion des tâches de test
 INSERT INTO tasks (title, description, created_by, assigned_to, status)

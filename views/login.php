@@ -1,6 +1,8 @@
 // formulaire de connexion
 //ajout du formulaire de connexion
 
+<?php require_once __DIR__ . '/../controllers/auth.php'; ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -16,7 +18,7 @@
     <main class="container">
         <h1>Connexion</h1>
 
-        <form method="post" action="index.php?page=login">
+        <form method="POST">
 
             <div class="form-group">
                 <label for="email">Email</label>
@@ -25,6 +27,7 @@
                     id="email" 
                     name="email" 
                     placeholder="ex: employe@flowershop.fr"
+                    value="lucas.petit@flowers-shop.com"
                     required
                 >
             </div>
@@ -36,11 +39,12 @@
                     id="password" 
                     name="password" 
                     placeholder="••••••••"
+                    value="password123"
                     required
                 >
             </div>
 
-            <button type="submit">Se connecter</button>
+            <input type="submit" value="Se connecter">
 
         </form>
     </main>
