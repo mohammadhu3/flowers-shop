@@ -1,5 +1,5 @@
 <?php
-//Démarre la session 
+//Démarre la session
 session_start();
 
 require_once __DIR__ . '/../config/database.php';
@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     //Récuperer les informations du formulaire
     $email = trim($_POST["email"] ?? "");
     $password = $_POST["password"] ?? "";
- 
+
     if (empty($email) || empty($password)) {
         $error = "Veuillez remplir tous les champs.";
     } else {

@@ -1,3 +1,4 @@
+
 // formulaire de connexion
 //ajout du formulaire de connexion
 
@@ -15,39 +16,39 @@
 </head>
 <body class="dark">
 
-    <main class="container">
-        <h1>Connexion</h1>
+<main class="container">
+    <h1>Connexion</h1>
 
-        <form method="POST">
+    <form method="POST">
 
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input 
-                    type="email" 
-                    id="email" 
-                    name="email" 
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input
+                    type="email"
+                    id="email"
+                    name="email"
                     placeholder="ex: employe@flowershop.fr"
                     value="lucas.petit@flowers-shop.com"
                     required
-                >
-            </div>
+            >
+        </div>
 
-            <div class="form-group">
-                <label for="password">Mot de passe</label>
-                <input 
-                    type="password" 
-                    id="password" 
-                    name="password" 
+        <div class="form-group">
+            <label for="password">Mot de passe</label>
+            <input
+                    type="password"
+                    id="password"
+                    name="password"
                     placeholder="••••••••"
                     value="password123"
                     required
-                >
-            </div>
+            >
+        </div>
 
-            <input type="submit" value="Se connecter">
+        <input type="submit" value="Se connecter">
 
-        </form>
-    </main>
+    </form>
+</main>
 
 </body>
 </html>

@@ -1,14 +1,14 @@
 -- Suppression de la base de données si elle existe
 DROP
-DATABASE IF EXISTS flowers_shop;
+    DATABASE IF EXISTS flowers_shop;
 
 -- Création de la base de données
 CREATE
-DATABASE flowers_shop;
+    DATABASE flowers_shop;
 
 -- Utilisation de la base de données
 USE
-flowers_shop;
+    flowers_shop;
 
 -- Table des utilisateurs : stocke les informations des utilisateurs
 CREATE TABLE users
@@ -24,7 +24,7 @@ CREATE TABLE users
     created_at DATETIME    DEFAULT CURRENT_TIMESTAMP
 );
 
--- Table des tâches : gestion des tâches assignées aux employés/responsable 
+-- Table des tâches : gestion des tâches assignées aux employés/responsable
 CREATE TABLE tasks
 (
     id          INT AUTO_INCREMENT PRIMARY KEY,
@@ -37,7 +37,7 @@ CREATE TABLE tasks
         'En cours',
         'Terminé',
         'A réassigner'
-    ) DEFAULT 'A faire',
+        ) DEFAULT 'A faire',
     created_at  DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (created_by) REFERENCES users (id),
     FOREIGN KEY (assigned_to) REFERENCES users (id)
@@ -77,16 +77,16 @@ INSERT INTO tasks (title, description, created_by, assigned_to, status)
 VALUES ('Préparer bouquet Saint-Valentin', 'Créer 20 bouquets de roses rouges pour la Saint-Valentin', 1, 4,
         'En cours'),
        ('Inventaire magasin', 'Faire l\'inventaire complet du stock de fleurs', 1, 2, 'A faire'),
-('Livraison centre-ville', 'Livrer les commandes du matin en centre-ville', 1, 6, 'Terminé'),
-('Décoration mariage', 'Préparer la décoration florale pour le mariage Martin', 1, 4, 'En cours'),
-('Formation nouveau employé', 'Former Sophie aux techniques de vente', 1, 5, 'A faire'),
-('Nettoyage vitrine', 'Nettoyer et réorganiser la vitrine du magasin', 1, 3, 'Terminé');
+       ('Livraison centre-ville', 'Livrer les commandes du matin en centre-ville', 1, 6, 'Terminé'),
+       ('Décoration mariage', 'Préparer la décoration florale pour le mariage Martin', 1, 4, 'En cours'),
+       ('Formation nouveau employé', 'Former Sophie aux techniques de vente', 1, 5, 'A faire'),
+       ('Nettoyage vitrine', 'Nettoyer et réorganiser la vitrine du magasin', 1, 3, 'Terminé');
 
 -- Insertion des relations tâches-utilisateurs
 INSERT INTO tasks_users (task_id, user_id) VALUES
-(1, 4), -- Jean travaille sur les bouquets Saint-Valentin
-(1, 3), -- Sophie aide aussi sur les bouquets
-(4, 4), -- Jean sur la décoration mariage
-(4, 5), -- Claire aide aussi sur la décoration
-(2, 2), -- Pierre fait l'inventaire
-(2, 3); -- Sophie aide pour l'inventaire
+                                               (1, 4), -- Jean travaille sur les bouquets Saint-Valentin
+                                               (1, 3), -- Sophie aide aussi sur les bouquets
+                                               (4, 4), -- Jean sur la décoration mariage
+                                               (4, 5), -- Claire aide aussi sur la décoration
+                                               (2, 2), -- Pierre fait l'inventaire
+                                               (2, 3); -- Sophie aide pour l'inventaire

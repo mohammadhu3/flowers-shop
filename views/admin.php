@@ -34,48 +34,48 @@
 
 <body>
 
-    <table>
-        <thead>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Created By</th>
+        <th>Assigned To</th>
+        <th>Status</th>
+        <th>Created At</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <?php if (isset($tasks) && is_array($tasks)) { ?>
+        <?php foreach ($tasks as $task) { ?>
             <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Created By</th>
-                <th>Assigned To</th>
-                <th>Status</th>
-                <th>Created At</th>
-                <th>Actions</th>
+                <td><?= htmlspecialchars($task["id"]) ?></td>
+                <td><?= htmlspecialchars($task["title"]) ?></td>
+                <td><?= htmlspecialchars($task["description"]) ?></td>
+                <td><?= htmlspecialchars($task["created_by"]) ?></td>
+                <td><?= htmlspecialchars($task["assigned_to"]) ?></td>
+                <td><select>
+                        <option value="A faire" <?= $task["status"] == "A faire" ? "selected" : "" ?>>A faire</option>
+                        <option value="En cours" <?= $task["status"] == "En cours" ? "selected" : "" ?>>En cours</option>
+                        <option value="Terminé" <?= $task["status"] == "Terminé" ? "selected" : "" ?>>Terminé</option>
+                    </select></td>
+
+                <td><?= htmlspecialchars($task["created_at"]) ?></td>
+                <td>
+                    <a href="edit_task.php?id=<?= htmlspecialchars($task["id"]) ?>">Modify</a>
+                    <a href="delete_task.php?id=<?= htmlspecialchars($task["id"]) ?>"
+                       onclick="return confirm('Are you sure you want to delete this task?');">
+                        Delete
+                    </a>
+                </td>
             </tr>
-        </thead>
-
-        <tbody>
-            <?php if (isset($tasks) && is_array($tasks)) { ?>
-                <?php foreach ($tasks as $task) { ?>
-                    <tr>
-                        <td><?= htmlspecialchars($task["id"]) ?></td>
-                        <td><?= htmlspecialchars($task["title"]) ?></td>
-                        <td><?= htmlspecialchars($task["description"]) ?></td>
-                        <td><?= htmlspecialchars($task["created_by"]) ?></td>
-                        <td><?= htmlspecialchars($task["assigned_to"]) ?></td>
-                        <td><select>
-                                <option value="A faire" <?= $task["status"] == "A faire" ? "selected" : "" ?>>A faire</option>
-                                <option value="En cours" <?= $task["status"] == "En cours" ? "selected" : "" ?>>En cours</option>
-                                <option value="Terminé" <?= $task["status"] == "Terminé" ? "selected" : "" ?>>Terminé</option>
-                            </select></td>
-
-                        <td><?= htmlspecialchars($task["created_at"]) ?></td>
-                        <td>
-                            <a href="edit_task.php?id=<?= htmlspecialchars($task["id"]) ?>">Modify</a>
-                            <a href="delete_task.php?id=<?= htmlspecialchars($task["id"]) ?>"
-                                onclick="return confirm('Are you sure you want to delete this task?');">
-                                Delete
-                            </a>
-                        </td>
-                    </tr>
-                <?php } ?>
-            <?php } ?>
-        </tbody>
-    </table>
+        <?php } ?>
+    <?php } ?>
+    </tbody>
+</table>
 
 </body>
 
