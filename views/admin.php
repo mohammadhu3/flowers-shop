@@ -26,9 +26,10 @@
 
 <?php
 require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../models/getAllTasks.php';
 
-$stmt = $pdo->query("SELECT * FROM tasks ORDER BY created_at DESC");
-$tasks = $stmt->fetchAll();
+$tasks = getAllTasks($pdo);
+
 ?>
 
 
