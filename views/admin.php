@@ -24,6 +24,14 @@
 // ];
 ?>
 
+<?php
+require_once __DIR__ . '/../config/database.php';
+
+$stmt = $pdo->query("SELECT * FROM tasks ORDER BY created_at DESC");
+$tasks = $stmt->fetchAll();
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
