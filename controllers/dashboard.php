@@ -1,0 +1,1 @@
+// vérifie les session, le rôle, appelle les modèles et choisi la vues)
