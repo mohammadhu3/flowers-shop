@@ -1,0 +1,140 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body dark gradient */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 25px;
+}
+
+/* Liens */
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Déconnexion */
+a[href*="logout"] {
+    display: inline-block;
+    margin: 15px 0 25px;
+    background-color: #dc3545;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* Titre page */
+h1 {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* Tableau */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+}
+
+/* En-tête */
+thead {
+    background-color: #2a2a2a;
+}
+
+/* Cellules */
+th, td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid #333333;
+}
+
+/* Titres */
+th {
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #cccccc;
+}
+
+/* Ligne hover */
+tbody tr:hover {
+    background-color: #262626;
+}
+
+/* Select */
+select {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border: 1px solid #444444;
+    padding: 6px;
+    border-radius: 5px;
+}
+
+/* Bouton submit */
+input[type="submit"],
+button {
+    margin-top: 6px;
+    padding: 7px 14px;
+    background-color: #00aaff;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Hover bouton */
+input[type="submit"]:hover,
+button:hover {
+    background-color: #008ecc;
+    transform: translateY(-1px);
+}
+
+/* Boutons actions */
+.btn {
+    padding: 7px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.btn:first-child {
+    background-color: #28a745; /* Modifier */
+    margin-right: 6px;
+}
+
+.btn:last-child {
+    background-color: #dc3545; /* Supprimer */
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+/* Message vide */
+td[colspan] {
+    color: #aaaaaa;
+    font-style: italic;
+}
+/* Welcome */
+.welcome {
+    background-color: #1f1f1f;
+    padding: 12px 18px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.6);
+    font-size: 14px;
+}
+

@@ -5,6 +5,7 @@ require_once __DIR__ . '/../includes/functions.php';
 require_once __DIR__ . '/../models/getAllTasks.php';
 require_once __DIR__ . '/../models/addTask.php';
 require_once __DIR__ . '/../models/getAllUsers.php';
+require_once __DIR__ . '/../models/statistics.php';
 
 if (!isset($_SESSION['user_role'], $_SESSION['user_id'])) {
     redirect('index.php?page=login');
@@ -27,5 +28,12 @@ if (isset($_POST['add_task'])) {
 
 $tasks = getAllTasks($pdo);
 $users = getAllUsers($pdo);
+
+// Récupère les statistiques
+$statistics = getTasksStatistics($pdo);
+$totalTaches = $statistics['total'];
+$todoTaches = $statistics['todo'];
+$inprogressTaches = $statistics['inprogress'];
+$finishedTaches = $statistics['finished'];
 
 require_once __DIR__ . '/../views/admin.php';
