@@ -1,3 +1,4 @@
+<!-- SÉPARER CHAQUE FONCTION DANS UN FICHIER -->
 
 <?php
 

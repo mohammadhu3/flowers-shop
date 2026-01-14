@@ -6,3 +6,5 @@ function getTasksByUser(PDO $pdo, int $userId): array
     $stmt->execute([$userId]);
     return $stmt->fetchAll();
 }
+
+// array ?

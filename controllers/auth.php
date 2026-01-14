@@ -1,4 +1,5 @@
 <?php
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -27,6 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (empty($email) || empty($password)) {
         $error = "Veuillez remplir tous les champs.";
     } else {
+
         // Recherche de l'utilisateur par email
         $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ? AND status = 'Actif'");
         $stmt->execute([$email]);
@@ -37,14 +39,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         // Sécurité : verifie le mot de passe
         if ($user && password_verify($password, $user["password"])) {
+
             // Création de la session
             $_SESSION["user_id"] = $user["id"];
             $_SESSION["user_name"] = $user["first_name"] . ' ' . $user["last_name"];
             $_SESSION["user_email"] = $user["email"];
             $_SESSION["user_role"] = $user["role"];
+
             // Redirection selon le rôle
-            $page = ($user["role"] === "Responsable") ? "admin" : "employe";
-            redirect("index.php?page=" . $page);
+            if ($user["role"] === "Responsable") {
+                redirect("index.php?page=admin");
+            } else {
+                redirect("index.php?page=employe");
+            }
         } else {
             $error = "Email ou mot de passe incorrect.";
         }
