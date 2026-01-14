@@ -14,7 +14,7 @@
 
     <!-- Formulaire d'ajout de tâche -->
 
-    <script src="/php/flowers-shop/assets/js/script.js"></script>
+    <script src="/flowers-shop/assets/js/script.js"></script>
 
     <button id="openAddTask">Ajouter une tâche</button>
 
@@ -94,17 +94,17 @@
                             <td>
                                 <form action="" method="post">
                                     <input type="hidden" name="task_id" value="<?= (int)$task["id"] ?>">
-                                    <select name="status">
-                                        <option value="<?= htmlspecialchars($task["status"]) ?>">
-                                            <?= htmlspecialchars($task["status"]) ?>
-                                        </option>
-                                        <?php foreach ($selectedTasks as $selectedTask) {
-                                        if ($task["status"] !== $selectedTask) { ?>
-                                        <option value="<?= htmlspecialchars($selectedTask) ?>">
-                                            <?= htmlspecialchars($selectedTask) ?>
-                                        </option>
-                                        <?php }
-                                        } ?>
+                            <select name="status">
+                                <option value="<?= htmlspecialchars($task["status"]) ?>">
+                                    <?= htmlspecialchars($task["status"]) ?>
+                                </option>
+                                <?php foreach ($selectedTasks as $selectedTask) {
+                                if ($task["status"] !== $selectedTask) { ?>
+                                <option value="<?= htmlspecialchars($selectedTask) ?>">
+                                    <?= htmlspecialchars($selectedTask) ?>
+                                </option>
+                                <?php }
+                                } ?>
                             </select>
                             <input type="submit" value="Valider">
                         </form>
