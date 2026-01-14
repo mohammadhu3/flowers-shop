@@ -1,93 +1,118 @@
-/* Corps de la page */
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f6f8;
+/* Reset */
+* {
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body dark gradient */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 25px;
 }
 
 /* Liens */
 a {
+    color: #ffffff;
     text-decoration: none;
-    color: #fff;
 }
 
-/* Bouton déconnexion */
+/* Déconnexion */
 a[href*="logout"] {
     display: inline-block;
-    margin-bottom: 20px;
+    margin: 15px 0 25px;
     background-color: #dc3545;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 10px 16px;
+    border-radius: 6px;
     font-weight: bold;
+}
+
+/* Titre page */
+h1 {
+    margin-bottom: 20px;
+    color: #ffffff;
 }
 
 /* Tableau */
 table {
     width: 100%;
     border-collapse: collapse;
-    background-color: #fff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.7);
 }
 
-/* En-tête du tableau */
+/* En-tête */
 thead {
-    background-color: #2c3e50;
-    color: #fff;
+    background-color: #2a2a2a;
 }
 
 /* Cellules */
 th, td {
-    padding: 12px;
+    padding: 14px;
     text-align: center;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #333333;
 }
 
-/* Titres en majuscules */
+/* Titres */
 th {
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 1px;
+    color: #cccccc;
 }
 
-/* Ligne survolée */
+/* Ligne hover */
 tbody tr:hover {
-    background-color: #f1f1f1;
+    background-color: #262626;
 }
 
-/* Sélecteur de statut */
+/* Select */
 select {
-    padding: 5px;
-    border-radius: 4px;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border: 1px solid #444444;
+    padding: 6px;
+    border-radius: 5px;
 }
 
-/* Bouton valider */
-input[type="submit"] {
-    margin-top: 5px;
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: #fff;
+/* Bouton submit */
+input[type="submit"],
+button {
+    margin-top: 6px;
+    padding: 7px 14px;
+    background-color: #00aaff;
+    color: #ffffff;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
+    font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-/* Effet hover sur valider */
-input[type="submit"]:hover {
-    background-color: #0056b3;
+/* Hover bouton */
+input[type="submit"]:hover,
+button:hover {
+    background-color: #008ecc;
+    transform: translateY(-1px);
 }
 
-/* Boutons modifier / supprimer */
+/* Boutons actions */
 .btn {
-    padding: 6px 10px;
-    border-radius: 4px;
+    padding: 7px 12px;
+    border-radius: 6px;
     font-size: 13px;
     font-weight: bold;
+    display: inline-block;
 }
 
 .btn:first-child {
     background-color: #28a745; /* Modifier */
-    margin-right: 5px;
+    margin-right: 6px;
 }
 
 .btn:last-child {
@@ -98,72 +123,18 @@ input[type="submit"]:hover {
     opacity: 0.85;
 }
 
-
-/* CSS pour employé */
-
-/* Titre dashboard employé */
-h1 {
-    margin-bottom: 20px;
-    color: #2c3e50;
-}
-
-/* Tableau employé */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #ffffff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* En-tête tableau */
-thead {
-    background-color: #2c3e50;
-    color: #ffffff;
-}
-
-/* Cellules tableau */
-th, td {
-    padding: 12px;
-    text-align: center;
-    border-bottom: 1px solid #dddddd;
-}
-
-/* Titres en majuscules */
-th {
-    text-transform: uppercase;
-    font-size: 14px;
-    letter-spacing: 1px;
-}
-
-/* Ligne survolée */
-tbody tr:hover {
-    background-color: #f1f1f1;
-}
-
-/* Select statut */
-select {
-    padding: 5px;
-    border-radius: 4px;
-}
-
-/* Bouton validation */
-button {
-    margin-top: 5px;
-    padding: 6px 12px;
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-/* Hover bouton */
-button:hover {
-    background-color: #0056b3;
-}
-
-/* Message aucune tâche */
-tbody td[colspan] {
+/* Message vide */
+td[colspan] {
+    color: #aaaaaa;
     font-style: italic;
-    color: #666;
 }
+/* Welcome */
+.welcome {
+    background-color: #1f1f1f;
+    padding: 12px 18px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.6);
+    font-size: 14px;
+}
+
