@@ -9,9 +9,9 @@ if (session_status() === PHP_SESSION_NONE) {
 // Sécurité : liste blanche des pages
 $routes = [
     'login' => 'views/login.php',
-    'admin' => 'controllers/dashboard.php',  // MVC : controller pour admin
-    'employe' => 'views/employe.php',
-    'dashboard' => 'controllers/dashboard.php',
+    'admin' => 'controllers/dashboard_admin.php',  // MVC : controller pour admin
+    'employe' => 'controllers/dashboard_employe.php',
+//    'dashboard' => 'controllers/dashboard_admin.php',
     '404' => 'views/404.php',
 ];
 
