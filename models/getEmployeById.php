@@ -1,17 +1,6 @@
-// fonctions liées aux users (GET employe by ID)
-
 <?php
 
-require_once "../config/database.php";
-
-// Récupère tout les utilisateurs
-function getAllUsers($pdo)
-{
-    $stmt = $pdo->prepare("SELECT * FROM users");
-    $stmt->execute();
-    $data = $stmt->fetchAll();
-    return $data;
-}
+require_once __DIR__ . "/../config/database.php";
 
 // Récupère un utilisateur par l'id
 function getEmployeById($pdo, $id)

@@ -43,7 +43,19 @@
                             <td><?= htmlspecialchars($task["title"]) ?></td>
                             <td><?= htmlspecialchars($task["description"]) ?></td>
                             <td><?= htmlspecialchars($task["created_by"]) ?></td>
-                            <td><?= htmlspecialchars($task["assigned_to"]) ?></td>
+
+                            <td>
+                                <form action="" method="post">
+                                    <!-- <input type="hidden" name="task_id" value="<?= (int)$task["id"] ?>"> -->
+                                    <select name="assigned_to">
+                                        <?php foreach ($users as $user) { ?>
+                                            <option value="<?= htmlspecialchars($user["first_name"]) ?>"><?= htmlspecialchars($user["last_name"]) . " " . htmlspecialchars($user["first_name"]) . " - " . htmlspecialchars($user["role"])  ?></option>
+                                        <?php } ?>
+                                    </select>
+                                    <input type="submit" value="Valider">
+                                </form>
+                            </td>
+
                             <td>
                                 <form action="" method="post">
                                     <input type="hidden" name="task_id" value="<?= (int)$task["id"] ?>">
@@ -62,6 +74,7 @@
                                     <input type="submit" value="Valider">
                                 </form>
                             </td>
+
                             <td><?= htmlspecialchars($task["created_at"]) ?></td>
                             <td>
                                 <a href="edit_task.php?id=<?= (int)($task["id"]) ?>" class="btn">Modifier</a>
