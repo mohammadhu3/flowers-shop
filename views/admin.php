@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Administration - Tâches</title>
-    <link rel="stylesheet" href="/flowers-shop/assets/css/admin.css">
+    <link rel="stylesheet" href="./assets/css/admin.css">
 </head>
 
 <body>
@@ -113,11 +113,14 @@
                     <td><?= htmlspecialchars($task["created_at"]) ?></td>
                     <td>
                         <a href="edit_task.php?id=<?= (int)($task["id"]) ?>" class="btn">Modifier</a>
-                        <a href="delete_task.php?id=<?= (int)($task["id"]) ?>"
-                           class="btn"
-                           onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette tâche ?');">
-                            Supprimer
-                        </a>
+                        <form method="post" style="display:inline;">
+                            <input type="hidden" name="delete_task_id" value="<?= (int)$task['id'] ?>">
+                            <button type="submit"
+                                    class="btn"
+                                    onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette tâche ?');">
+                                Supprimer
+                            </button>
+                        </form>
                     </td>
                 </tr>
             <?php endif; ?>
