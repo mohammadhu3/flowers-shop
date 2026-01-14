@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <title>Administration - Tâches</title>
@@ -15,7 +14,7 @@
     <table>
         <thead>
             <tr>
-                <th>Id</th>
+                <th>#</th>
                 <th>Titre</th>
                 <th>Description</th>
                 <th>Créé par</th>
