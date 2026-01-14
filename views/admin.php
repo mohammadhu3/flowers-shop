@@ -11,6 +11,8 @@
 
     <a href="controllers/logout.php">Déconnexion</a>
 
+    <?php include_once 'statistics.php'; ?>
+
     <table>
         <thead>
             <tr>
