@@ -8,6 +8,8 @@
 
 <body>
 
+    <?php include_once 'welcome.php'; ?>
+
     <a href="controllers/logout.php">Déconnexion</a>
 
     <table>
@@ -41,6 +43,8 @@
                             <td><?= htmlspecialchars($task["title"]) ?></td>
                             <td><?= htmlspecialchars($task["description"]) ?></td>
                             <td><?= htmlspecialchars($task["created_by"]) ?></td>
+
+                            
                             <td><?= htmlspecialchars($task["assigned_to"]) ?></td>
                             <td>
                                 <form action="" method="post">
@@ -59,8 +63,9 @@
                             <td><?= htmlspecialchars($task["created_at"]) ?></td>
                             <!-- Sécurité : à améliorer via GET + token CSRF ? -->
                             <td>
-                                <a href="edit_task.php?id=<?= (int)($task["id"]) ?>">Modify</a>
+                                <a href="edit_task.php?id=<?= (int)($task["id"]) ?>" class="btn">Modify</a>
                                 <a href="delete_task.php?id=<?= (int)($task["id"]) ?>"
+                                    class="btn"
                                     onclick="return confirm('Are you sure you want to delete this task?');">
                                     Delete
                                 </a>

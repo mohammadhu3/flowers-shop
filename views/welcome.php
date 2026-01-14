@@ -1,0 +1,1 @@
+ <p>Bonjour, <?= $_SESSION["user_name"] ?> (<?= $_SESSION["user_email"] ?>) - <?= $_SESSION["user_role"] ?></p>
