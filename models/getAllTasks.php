@@ -6,4 +6,3 @@ function getAllTasks(PDO $pdo): array
     $stmt->execute();
     return $stmt->fetchAll();
 }
-

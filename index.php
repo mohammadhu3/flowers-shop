@@ -11,7 +11,7 @@ $routes = [
     'login' => 'views/login.php',
     'admin' => 'controllers/dashboard_admin.php',  // MVC : controller pour admin
     'employe' => 'controllers/dashboard_employe.php',
-//    'dashboard' => 'controllers/dashboard_admin.php',
+    'statistics' => 'controllers/statistics.php',  // MVC : controller pour statistiques
     '404' => 'views/404.php',
 ];
 
