@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Administration - Tâches</title>
+    <link rel="stylesheet" href="/flowers-shop/assets/css/admin.css">
 </head>
 
 <body>

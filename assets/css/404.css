@@ -1,0 +1,49 @@
+/* Page 404 */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Conteneur */
+.error-container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 40px 50px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Code erreur */
+h1 {
+    font-size: 80px;
+    margin: 0;
+    color: #dc3545;
+}
+
+/* Texte */
+p {
+    font-size: 16px;
+    color: #333333;
+    margin: 15px 0;
+}
+
+/* Lien retour */
+a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 18px;
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Hover lien */
+a:hover {
+    background-color: #0056b3;
+}

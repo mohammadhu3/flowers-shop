@@ -1,0 +1,169 @@
+/* Corps de la page */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Liens */
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Bouton déconnexion */
+a[href*="logout"] {
+    display: inline-block;
+    margin-bottom: 20px;
+    background-color: #dc3545;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Tableau */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* En-tête du tableau */
+thead {
+    background-color: #2c3e50;
+    color: #fff;
+}
+
+/* Cellules */
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Titres en majuscules */
+th {
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* Ligne survolée */
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Sélecteur de statut */
+select {
+    padding: 5px;
+    border-radius: 4px;
+}
+
+/* Bouton valider */
+input[type="submit"] {
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Effet hover sur valider */
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Boutons modifier / supprimer */
+.btn {
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.btn:first-child {
+    background-color: #28a745; /* Modifier */
+    margin-right: 5px;
+}
+
+.btn:last-child {
+    background-color: #dc3545; /* Supprimer */
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+
+/* CSS pour employé */
+
+/* Titre dashboard employé */
+h1 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Tableau employé */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* En-tête tableau */
+thead {
+    background-color: #2c3e50;
+    color: #ffffff;
+}
+
+/* Cellules tableau */
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #dddddd;
+}
+
+/* Titres en majuscules */
+th {
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* Ligne survolée */
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Select statut */
+select {
+    padding: 5px;
+    border-radius: 4px;
+}
+
+/* Bouton validation */
+button {
+    margin-top: 5px;
+    padding: 6px 12px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Hover bouton */
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Message aucune tâche */
+tbody td[colspan] {
+    font-style: italic;
+    color: #666;
+}
