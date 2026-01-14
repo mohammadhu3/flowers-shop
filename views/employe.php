@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<?php include_once 'welcome.php'; ?>
+
 <h1>Mes tâches</h1>
 
 <table border="1" cellpadding="8">
