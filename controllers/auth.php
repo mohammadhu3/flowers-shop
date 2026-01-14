@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION["user_role"] = $user["role"];
 
             // Redirection selon le rôle
-            if ($user["role"] === "Responsable") {
+            if ($_SESSION["user_role"] === "Responsable") {
                 redirect("index.php?page=admin");
             } else {
                 redirect("index.php?page=employe");
