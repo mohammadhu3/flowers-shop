@@ -54,7 +54,7 @@
             <tr>
                 <th>#</th>
                 <th>Tâche</th>
-                <th>Description</th>
+                <th>Commentaire</th>
                 <th>Créé par</th>
                 <th>Assigné à</th>
                 <th>Statut</th>
