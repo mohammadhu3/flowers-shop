@@ -29,11 +29,11 @@ CREATE TABLE tasks
     created_by  VARCHAR(50)          NOT NULL,
     assigned_to INT          NOT NULL,
     status      ENUM(
-        'A faire',
+        'À faire',
         'En cours',
         'Terminé',
-        'A réassigner'
-        ) DEFAULT 'A faire',
+        'À réassigner'
+        ) DEFAULT 'À faire',
     created_at  DATETIME DEFAULT CURRENT_TIMESTAMP,
     modified_at DATETIME NULL ON UPDATE CURRENT_TIMESTAMP
 );
