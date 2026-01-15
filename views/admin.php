@@ -17,6 +17,8 @@
 
     <script src="./assets/js/script.js"></script>
 
+    <?php include_once 'statistics.php'; ?>
+
     <button id="openAddTask">Ajouter une tâche</button>
 
     <div id="addTaskForm" style="display: none;">
@@ -46,8 +48,6 @@
         </form>
 
     </div>
-
-    <?php include_once 'statistics.php'; ?>
 
     <table>
         <thead>
