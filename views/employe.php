@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard Employé</title>
+
     <!-- CSS -->
-    <link rel="stylesheet" href="/flowers-shop/assets/css/admin.css">
+    <link rel="stylesheet" href="./assets/css/admin.css">
 
 </head>
 <body>
@@ -35,7 +36,7 @@
                         <td><?= htmlspecialchars($task['status']) ?></td>
                         <td><?= htmlspecialchars($task['created_at']) ?></td>
                         <td>
-                            <form method="post" action="update_status.php">
+                            <form method="post" action="">
                                 <input type="hidden" name="task_id" value="<?= $task['id'] ?>">
                                 <select name="status">
                                     <option value="A faire" <?= $task['status'] === 'A faire' ? 'selected' : '' ?>>À faire</option>

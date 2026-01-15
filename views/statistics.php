@@ -6,7 +6,7 @@
     </div>
 
     <div class="card">
-        <h2>A faire</h2>
+        <h2>À faire</h2>
         <p><?= $todoTaches ?></p>
     </div>
 
@@ -21,7 +21,7 @@
     </div>
 
     <div class="card">
-        <h2>A réassigner</h2>
+        <h2>À réassigner</h2>
         <p style="color: <?= $reassignTaches == 0 ? 'green' : 'red' ?>;"><?= $reassignTaches ?></p>
     </div>
 

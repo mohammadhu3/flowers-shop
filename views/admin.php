@@ -15,7 +15,7 @@
 
     <!-- Formulaire d'ajout de tâche -->
 
-    <script src="/flowers-shop/assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
 
     <button id="openAddTask">Ajouter une tâche</button>
 
@@ -69,10 +69,10 @@
                 <?php foreach ($tasks as $task) { ?>
                     <?php
                     $selectedTasks = [
-                        "A faire",
+                        "À faire",
                         "En cours",
                         "Terminé",
-                        "A reassigner"
+                        "À reassigner"
                     ];
                     ?>
                     <?php if (is_numeric($task["id"])) : ?>
