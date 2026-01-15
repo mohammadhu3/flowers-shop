@@ -12,12 +12,14 @@
 
     <?php include_once 'welcome.php'; ?>
 
+        <a href="controllers/logout.php">Déconnexion</a>
+
     <h1>Mes tâches</h1>
 
     <table border="1" cellpadding="8">
         <thead>
             <tr>
-                <th>Titre</th>
+                <th>Tâche</th>
                 <th>Description</th>
                 <th>Statut</th>
                 <th>Date de création</th>

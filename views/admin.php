@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>Administration - Tâches</title>
@@ -33,7 +34,8 @@
                 foreach ($users as $user) {
                     echo '<option value="' . (int)$user['id'] . '">';
                     echo htmlspecialchars($user['last_name']) . ' ' . htmlspecialchars($user['first_name']) . ' - ' . htmlspecialchars($user['role']);
-                    echo '</option>'; }
+                    echo '</option>';
+                }
                 ?>
 
             </select>
@@ -51,12 +53,13 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Titre</th>
+                <th>Tâche</th>
                 <th>Description</th>
                 <th>Créé par</th>
                 <th>Assigné à</th>
                 <th>Statut</th>
                 <th>Date de création</th>
+                <th>Date de modification</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -74,60 +77,63 @@
                     ?>
                     <?php if (is_numeric($task["id"])) : ?>
                         <tr>
-                            <td><?= (int)($task["id"]) ?></td>
-                            <td><?= htmlspecialchars($task["title"]) ?></td>
-                            <td><?= htmlspecialchars($task["description"]) ?></td>
-                            <td><?= htmlspecialchars($task["created_by"]) ?></td>
+                            <form method="post">
+                                <input type="hidden" name="task_id" value="<?= (int)($task["id"]) ?>">
+                                <td><?= (int)($task["id"]) ?></td>
+                                <td>
+                                    <input type="text" name="title" value="<?= htmlspecialchars($task["title"]) ?>" required>
+                                </td>
+                                <td>
+                                    <input type="text" name="description" value="<?= htmlspecialchars($task["description"]) ?>">
+                                </td>
+                                <td><?= htmlspecialchars($task["created_by"]) ?></td>
 
-                            <td>
-                                <form action="" method="post">
-                                    <!-- <input type="hidden" name="task_id" value="<?= (int)$task["id"] ?>"> -->
+                                <!-- Select : tâche assignée à -->
+                                <td>
                                     <select name="assigned_to">
                                         <?php foreach ($users as $user) { ?>
-                                            <option value="<?= htmlspecialchars($user["first_name"]) ?>"><?= htmlspecialchars($user["last_name"]) . " " . htmlspecialchars($user["first_name"]) . " - " . htmlspecialchars($user["role"])  ?></option>
+                                            <option value="<?= (int)$user["id"] ?>" <?= ($task["assigned_to"] == $user["id"]) ? 'selected' : '' ?>>
+                                                <?= htmlspecialchars($user["last_name"]) . " " . htmlspecialchars($user["first_name"]) . " - " . htmlspecialchars($user["role"])  ?>
+                                            </option>
                                         <?php } ?>
                                     </select>
-                                    <input type="submit" value="Valider">
-                                </form>
-                            </td>
+                                </td>
 
-                            <td>
-                                <form action="" method="post">
-                                    <input type="hidden" name="task_id" value="<?= (int)$task["id"] ?>">
-                            <select name="status">
-                                <option value="<?= htmlspecialchars($task["status"]) ?>">
-                                    <?= htmlspecialchars($task["status"]) ?>
-                                </option>
-                                <?php foreach ($selectedTasks as $selectedTask) {
-                                if ($task["status"] !== $selectedTask) { ?>
-                                <option value="<?= htmlspecialchars($selectedTask) ?>">
-                                    <?= htmlspecialchars($selectedTask) ?>
-                                </option>
-                                <?php }
-                                } ?>
-                            </select>
-                            <input type="submit" value="Valider">
-                        </form>
-                    </td>
+                                <!-- Select : statut de la tâche -->
+                                <td>
+                                    <select name="status">
+                                        <option value="<?= htmlspecialchars($task["status"]) ?>">
+                                            <?= htmlspecialchars($task["status"]) ?>
+                                        </option>
+                                        <?php foreach ($selectedTasks as $selectedTask) {
+                                            if ($task["status"] !== $selectedTask) { ?>
+                                                <option value="<?= htmlspecialchars($selectedTask) ?>">
+                                                    <?= htmlspecialchars($selectedTask) ?>
+                                                </option>
+                                        <?php }
+                                        } ?>
+                                    </select>
 
-                    <td><?= htmlspecialchars($task["created_at"]) ?></td>
-                    <td>
-                        <a href="edit_task.php?id=<?= (int)($task["id"]) ?>" class="btn">Modifier</a>
-                        <form method="post" style="display:inline;">
-                            <input type="hidden" name="delete_task_id" value="<?= (int)$task['id'] ?>">
-                            <button type="submit"
-                                    class="btn"
-                                    onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette tâche ?');">
-                                Supprimer
-                            </button>
-                        </form>
-                    </td>
-                </tr>
-            <?php endif; ?>
-        <?php } ?>
-    <?php } ?>
-    </tbody>
-</table>
+                                </td>
+
+                                <td><?= htmlspecialchars($task["created_at"]) ?></td>
+                                <td><?= $task["modified_at"] ? htmlspecialchars($task["modified_at"]) : '-' ?></td>
+
+                                <td>
+                                    <button type="submit" name="update_task" class="btn">Modifier</button>
+                                    <button type="submit" name="delete_task_id" value="<?= (int)$task['id'] ?>"
+                                        class="btn"
+                                        onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette tâche ?');">
+                                        Supprimer
+                                    </button>
+                                </td>
+                            </form>
+                        </tr>
+                    <?php endif; ?>
+                <?php } ?>
+            <?php } ?>
+        </tbody>
+    </table>
 
 </body>
 

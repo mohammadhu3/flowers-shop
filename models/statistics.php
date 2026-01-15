@@ -25,5 +25,10 @@ function getTasksStatistics($pdo)
     $stmt->execute();
     $stats['finished'] = $stmt->fetch()['count'];
     
+    // Tâches "A reassigner"
+    $stmt = $pdo->prepare("SELECT COUNT(*) as count FROM tasks WHERE status = 'A reassigner'");
+    $stmt->execute();
+    $stats['reassign'] = $stmt->fetch()['count'];
+    
     return $stats;
 }

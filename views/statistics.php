@@ -20,4 +20,9 @@
         <p><?= $finishedTaches ?></p>
     </div>
 
+    <div class="card">
+        <h2>A réassigner</h2>
+        <p style="color: <?= $reassignTaches == 0 ? 'green' : 'red' ?>;"><?= $reassignTaches ?></p>
+    </div>
+
 </div>
