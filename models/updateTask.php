@@ -15,3 +15,4 @@ function updateTask($pdo, $id, $title, $description, $assignedTo, $status) {
         error_log("Erreur lors de la mise à jour de la tâche : " . $e->getMessage());
     }
 }
+ 
