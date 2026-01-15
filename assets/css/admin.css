@@ -220,9 +220,6 @@ input[type="text"]::placeholder {
     margin-top: 20px;
 }
 
-#addTaskForm form {
-    padding-bottom: 20px;
-}
 
 .welcome {
     gap: 6px;
