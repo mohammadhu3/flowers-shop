@@ -5,11 +5,17 @@
     <meta charset="UTF-8">
     <title>Administration - Tâches</title>
     <link rel="stylesheet" href="./assets/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
     <?php include_once 'welcome.php'; ?>
+
+    <?php
+    $sort = $_GET['sort'] ?? '';
+    $dir  = $_GET['dir'] ?? 'asc';
+    ?>
 
     <a href="controllers/logout.php">Déconnexion</a>
 
@@ -56,14 +62,29 @@
                 <th>Tâche</th>
                 <th>Commentaire</th>
                 <th>Créé par</th>
-                <th>Assigné à</th>
-                <th>Statut</th>
-                <th>Date de création</th>
-                <th>Date de modification</th>
+                <th>
+                    <a href="index.php?page=admin&sort=employee&dir=<?= ($sort === 'employee' && $dir === 'asc') ? 'desc' : 'asc' ?>">
+                        Assigné à <i class="fa-solid fa-sort"></i>
+                    </a>
+                </th>
+                <th>
+                    <a href="index.php?page=admin&sort=status&dir=<?= ($sort === 'status' && $dir === 'asc') ? 'desc' : 'asc' ?>">
+                        Statut <i class="fa-solid fa-sort"></i>
+                    </a>
+                </th>
+                <th>
+                    <a href="index.php?page=admin&sort=created_at&dir=<?= ($sort === 'created_at' && $dir === 'asc') ? 'desc' : 'asc' ?>">
+                        Date de création <i class="fa-solid fa-sort"></i>
+                    </a>
+                </th>
+                <th>
+                    <a href="index.php?page=admin&sort=modified_at&dir=<?= ($sort === 'modified_at' && $dir === 'asc') ? 'desc' : 'asc' ?>">
+                        Date de modification <i class="fa-solid fa-sort"></i>
+                    </a>
+                </th>
                 <th>Actions</th>
             </tr>
         </thead>
-
         <tbody>
             <?php if (isset($tasks) && is_array($tasks)) { ?>
                 <?php foreach ($tasks as $task) { ?>

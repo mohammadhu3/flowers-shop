@@ -8,6 +8,7 @@ require_once __DIR__ . '/../models/getAllUsers.php';
 require_once __DIR__ . '/../models/statistics.php';
 require_once __DIR__ . '/../models/deleteTask.php';
 require_once __DIR__ . '/../models/updateTask.php';
+require_once __DIR__ . '/../models/getAllTasksFiltered.php';
 
 if (!isset($_SESSION['user_role'], $_SESSION['user_id'])) {
     redirect('index.php?page=login');
@@ -53,8 +54,19 @@ if (isset($_POST['delete_task_id'])) {
     redirect("index.php?page=admin");
 }
 
+// Traitement de tri des tâches
+$sort = 'created_at';
+$dir = 'asc';
+
+if (isset($_GET['sort'])) {
+    $sort = $_GET['sort'];
+}
+if (isset($_GET['dir'])) {
+    $dir = $_GET['dir'];
+}
+
 // Récupère les informations pour les traiter dans admin.php
-$tasks = getAllTasks($pdo);
+$tasks = getAllTasksSorted($pdo, $sort, $dir);
 $users = getAllUsers($pdo);
 
 // Récupère les statistiques
