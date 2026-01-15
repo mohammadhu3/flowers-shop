@@ -72,6 +72,7 @@
                         Statut <i class="fa-solid fa-sort"></i>
                     </a>
                 </th>
+                <th>Priorité</th>
                 <th>
                     <a href="index.php?page=admin&sort=created_at&dir=<?= ($sort === 'created_at' && $dir === 'asc') ? 'desc' : 'asc' ?>">
                         Date de création <i class="fa-solid fa-sort"></i>
