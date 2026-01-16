@@ -9,13 +9,6 @@ Juliette DEFRANCE - Cheffe de projet
 Kévin CALIXTE - Backend
 Mohammad HUSAINI - Frontend
 
-Technologies utilisées : 
-- HTML
-- CSS
-- PHP (version 8.3.28)
-- JAVASCRIPT
-- MYSQL (version 8.4.7)
-
 Preview : 
 ![alt text](formulaire-connexion.png)
 ![alt text](dashboard-admin.png)
