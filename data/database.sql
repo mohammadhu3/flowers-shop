@@ -38,15 +38,6 @@ CREATE TABLE tasks (
     modified_at DATETIME NULL ON UPDATE CURRENT_TIMESTAMP
 );
 
--- Table de liaison entre tâches et utilisateurs
-CREATE TABLE tasks_users (
-    task_id INT NOT NULL,
-    user_id INT NOT NULL,
-    PRIMARY KEY (task_id, user_id),
-    FOREIGN KEY (task_id) REFERENCES tasks (id),
-    FOREIGN KEY (user_id) REFERENCES users (id)
-);
-
 -- ====================================
 -- INSERTION DES DONNÉES DE TEST
 -- ====================================
